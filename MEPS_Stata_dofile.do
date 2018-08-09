@@ -6,10 +6,10 @@ clear all
 capture log close
 
 /*keep log*/
-log using "C:\Users\Eline van den Broek\Dissertation\log100417_v4" 
+log using "C:\Users\xxxxx" 
 
 /*retrieve the data*/
-use "H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model\analysisfinal9.dta", clear
+use "H:\xxxxx.dta", clear
 
 set more off
 
@@ -222,5 +222,5 @@ margins, dydx(*) post
 est store outPA2
 
 
-esttab outMD  outMD2 outNP outNP2 outPA outPA2 using "H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model\outpatientcats_8.rtf", cells(b(star fmt(4) label(Coef.)) se(par fmt(4) label(std.errors))) starlevels( * 0.10 ** 0.05 *** 0.01) stats(N r2, labels ("No. of Obs.""R-Squared"))
+esttab outMD  outMD2 outNP outNP2 outPA outPA2 using "H:\xxxx\outpatientcats_8.rtf", cells(b(star fmt(4) label(Coef.)) se(par fmt(4) label(std.errors))) starlevels( * 0.10 ** 0.05 *** 0.01) stats(N r2, labels ("No. of Obs.""R-Squared"))
 
