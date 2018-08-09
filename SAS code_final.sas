@@ -1,12 +1,12 @@
 ﻿***THIS IS THE PROGRAM FOR PAPER 1 OF MY DISSERTATION IN WHICH I ASSESS
 The effect of restrictions on provider access in insurance plans on healthcare expenditures and assess if it varies among plan types.
-FOR THIS PROJECT, I USE MEPS 2013 AND 2014 DATA.
+FOR THIS PROJECT, I USE MEPS 2013 DATA.
 FIRST 2013.***;
 
 /* 1) We first need to import the MEPS 2013 full year consoldiated data file*/
 
-LIBNAME Table1 "H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model\SAS code";                                                             
-FILENAME INTable1 "H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model\MEPS data\2013\H163.SSP";                           
+LIBNAME Table1 "H:\xxxx\SAS code";                                                             
+FILENAME INTable1 "H:\xxxxx\H163.SSP";                           
                                                                                                     
 PROC XCOPY IN=INTable1 OUT=Table1 IMPORT;                                                           
 RUN;  
@@ -305,8 +305,8 @@ run;
 
 *** 5) Now, we want to import the 2013 Medical Conditions file ***;
 
-LIBNAME Table1 "H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model\SAS code";                                                             
-FILENAME MedCon "H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model\MEPS data\2013\H162.SSP";                                           
+LIBNAME Table1 "H:xxxx\SAS code";                                                             
+FILENAME MedCon "H:\xxxxx\2013\H162.SSP";                                           
                                                                                                     
 PROC XCOPY IN=MedCon OUT=Table1 IMPORT;                                                           
 RUN;  
@@ -1289,14 +1289,14 @@ Transform the temporary data set that includes all data steps above into permane
 export to stata.*/
 
 
-LIBNAME Final "H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model";  
+LIBNAME Final "H:\xxxxx\Paper 1 - MEPS IV model";  
 data Final.analysisfinal4;
 set finaldata3;
 run; 
 
 Proc export data=Final.analysisfinal4
 dbms=stata
-outfile="H:\Eline's_H-drive_CU_Anschutz\Dissertation\Dissertation Papers\Paper 1 - MEPS IV model\analysisfinal8.dta"
+outfile="H:\\xxxxx\analysisfinal8.dta"
 replace;
 run;
 
